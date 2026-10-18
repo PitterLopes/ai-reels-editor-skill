@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "style": "impact",
+  "language": "pt",
+  "brand": {"accent": "#FAE67A", "ink": "#0B0B14", "display": "Inter Tight", "serif": "DM Serif Display", "text": "Inter"},
+  "beats": [
+    {"type": "line", "t": 0.0, "end": 1.6, "text": "todo mundo fala", "slot": "chest"},
+    {"type": "word", "t": 1.5, "end": 3.0, "text": "claude", "size": "xl", "slot": "behind"},
+    {"type": "line", "t": 1.9, "end": 3.0, "text": "pode editar o seu", "slot": "chest"},
+    {"type": "word", "t": 2.4, "end": 3.0, "text": "vídeo.", "size": "big", "slot": "chest", "accent": true},
+    {"type": "cut", "t": 3.1, "zoom": 1.18},
+    {"type": "punch", "t": 7.4},
+    {"type": "card", "t": 9.8, "end": 16.5, "kicker": "o que muda", "title": "Três pontos",
+     "items": [{"t": 10.6, "text": "Planejar a semana", "mark": "check"},
+               {"t": 12.3, "text": "Escolhas possíveis"},
+               {"t": 14.4, "text": "Acompanhar o caminho", "mark": "cross"}]},
+    {"type": "cut", "t": 16.6, "zoom": 1.0},
+    {"type": "stat", "t": 20.0, "end": 24.5, "label": "por mensagem entregue", "prefix": "R$ ", "from": 0, "to": 0.32, "decimals": 2, "bar": 1.0},
+    {"type": "compare", "t": 26.0, "end": 32.0, "title": "Oferta vs aviso de entrega",
+     "a": {"label": "Marketing", "value": "R$ 0,32", "num": 0.32, "bad": true},
+     "b": {"label": "Utilidade", "value": "R$ 0,035", "num": 0.035, "good": true}, "ratio": "9×"}
+  ]
+}

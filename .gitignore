@@ -1,0 +1,9 @@
+template/assets/fonts/*.woff2
+template/assets/fonts/fonts.css
+template/assets/sfx/*.wav
+template/assets/gsap.min.js
+__pycache__/
+.DS_Store
+*.mp4
+*.mov
+*.webm
