@@ -40,7 +40,7 @@ vf = 'scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,crop=10
 cmd = [FF, '-loglevel', 'error', '-y', '-i', src, '-map', '0:v:0', '-vf', vf, '-fps_mode', 'cfr',
        '-c:v', 'libx264', '-crf', '15', '-preset', 'medium', '-pix_fmt', 'yuv420p']
 if info['audio']:
-    cmd += ['-map', '0:a:0', '-af', 'asetpts=PTS-STARTPTS', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000']
+    cmd += ['-map', '0:a:0', '-af', 'asetpts=PTS-STARTPTS', '-c:a', 'alac', '-ar', '48000']  # lossless: the only AAC encode happens at the very end (editar.py)
 cmd += [norm]
 subprocess.run(cmd, check=True)
 
@@ -72,7 +72,7 @@ else:
     fc = (f"[0:v]select='{expr}',setpts=N/30/TB[v];[0:a]aselect='{expr}',asetpts=N/SR/TB[a]")
     subprocess.run([FF, '-loglevel', 'error', '-y', '-i', norm, '-filter_complex', fc, '-map', '[v]', '-map', '[a]',
                     '-r', '30', '-fps_mode', 'cfr', '-c:v', 'libx264', '-crf', '15', '-preset', 'medium', '-pix_fmt', 'yuv420p',
-                    '-g', '30', '-keyint_min', '30', '-c:a', 'aac', '-b:a', '192k', aroll], check=True)
+                    '-g', '30', '-keyint_min', '30', '-c:a', 'alac', aroll], check=True)  # lossless (see above)
 # cut positions on the cut timeline (for soft punches that hide the jump)
 t_cut, removed = [], 0.0
 for c in cuts:
